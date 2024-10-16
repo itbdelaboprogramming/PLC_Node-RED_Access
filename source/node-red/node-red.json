@@ -1,0 +1,727 @@
+[
+    {
+        "id": "1e9d2521b3667a16",
+        "type": "tab",
+        "label": "Keyence TCP test",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "5687253d1151578f",
+        "type": "function",
+        "z": "1e9d2521b3667a16",
+        "name": "green lamp",
+        "func": "var val;\nif (msg.payload === true){\n    val =\"1\";\n}\nelse{\n    val =\"0\";\n}\nmsg.payload = \"WR MR0 \" + val + \"\\r\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1030,
+        "y": 160,
+        "wires": [
+            [
+                "f3d98f91bd7ce3f7"
+            ]
+        ]
+    },
+    {
+        "id": "f3d98f91bd7ce3f7",
+        "type": "tcp request",
+        "z": "1e9d2521b3667a16",
+        "name": "",
+        "server": "192.168.0.10",
+        "port": "8501",
+        "out": "char",
+        "ret": "string",
+        "splitc": "\\n",
+        "newline": "",
+        "trim": false,
+        "tls": "",
+        "x": 1240,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9b8fabac5c2ddec0",
+        "type": "ui_switch",
+        "z": "1e9d2521b3667a16",
+        "name": "",
+        "label": "Green lamp",
+        "tooltip": "",
+        "group": "38a86499a209a7ba",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 870,
+        "y": 160,
+        "wires": [
+            [
+                "5687253d1151578f"
+            ]
+        ]
+    },
+    {
+        "id": "c88b27d1c667633d",
+        "type": "function",
+        "z": "1e9d2521b3667a16",
+        "name": "Yellow lamp",
+        "func": "var val;\nif (msg.payload === true){\n    val =\"1\";\n}\nelse{\n    val =\"0\";\n}\nmsg.payload = \"WR MR1 \" + val + \"\\r\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1030,
+        "y": 240,
+        "wires": [
+            [
+                "c2d8c2a0845b4b0e"
+            ]
+        ]
+    },
+    {
+        "id": "c2d8c2a0845b4b0e",
+        "type": "tcp request",
+        "z": "1e9d2521b3667a16",
+        "name": "",
+        "server": "192.168.0.10",
+        "port": "8501",
+        "out": "char",
+        "ret": "string",
+        "splitc": "\\n",
+        "newline": "",
+        "trim": false,
+        "tls": "",
+        "x": 1240,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "77f4d448d2165917",
+        "type": "ui_switch",
+        "z": "1e9d2521b3667a16",
+        "name": "",
+        "label": "Yellow lamp",
+        "tooltip": "",
+        "group": "38a86499a209a7ba",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 870,
+        "y": 240,
+        "wires": [
+            [
+                "c88b27d1c667633d"
+            ]
+        ]
+    },
+    {
+        "id": "6adfdd6e21505478",
+        "type": "function",
+        "z": "1e9d2521b3667a16",
+        "name": "red lamp",
+        "func": "var val;\nif (msg.payload === true){\n    val =\"1\";\n}\nelse{\n    val =\"0\";\n}\nmsg.payload = \"WR MR2 \" + val + \"\\r\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1040,
+        "y": 340,
+        "wires": [
+            [
+                "d98d88c029a20a36"
+            ]
+        ]
+    },
+    {
+        "id": "d98d88c029a20a36",
+        "type": "tcp request",
+        "z": "1e9d2521b3667a16",
+        "name": "",
+        "server": "192.168.0.10",
+        "port": "8501",
+        "out": "char",
+        "ret": "string",
+        "splitc": "\\n",
+        "newline": "",
+        "trim": false,
+        "tls": "",
+        "x": 1260,
+        "y": 380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "408592a6d75f3112",
+        "type": "ui_switch",
+        "z": "1e9d2521b3667a16",
+        "name": "",
+        "label": "Red lamp",
+        "tooltip": "",
+        "group": "38a86499a209a7ba",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 880,
+        "y": 340,
+        "wires": [
+            [
+                "6adfdd6e21505478"
+            ]
+        ]
+    },
+    {
+        "id": "3a5a415dd999450e",
+        "type": "function",
+        "z": "1e9d2521b3667a16",
+        "name": "blue lamp",
+        "func": "var val;\nif (msg.payload === true){\n    val =\"1\";\n}\nelse{\n    val =\"0\";\n}\nmsg.payload = \"WR MR3 \" + val + \"\\r\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1060,
+        "y": 460,
+        "wires": [
+            [
+                "117b8a598adaa9a6"
+            ]
+        ]
+    },
+    {
+        "id": "117b8a598adaa9a6",
+        "type": "tcp request",
+        "z": "1e9d2521b3667a16",
+        "name": "",
+        "server": "192.168.0.10",
+        "port": "8501",
+        "out": "char",
+        "ret": "string",
+        "splitc": "\\n",
+        "newline": "",
+        "trim": false,
+        "tls": "",
+        "x": 1280,
+        "y": 500,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "dcc356c5390c1313",
+        "type": "ui_switch",
+        "z": "1e9d2521b3667a16",
+        "name": "",
+        "label": "Blue lamp",
+        "tooltip": "",
+        "group": "38a86499a209a7ba",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 900,
+        "y": 460,
+        "wires": [
+            [
+                "3a5a415dd999450e"
+            ]
+        ]
+    },
+    {
+        "id": "406340f3e96e957e",
+        "type": "function",
+        "z": "1e9d2521b3667a16",
+        "name": "read green",
+        "func": "msg.payload = \"RD R36000\\r\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 210,
+        "y": 160,
+        "wires": [
+            [
+                "4d3fe35ed19a7f20"
+            ]
+        ]
+    },
+    {
+        "id": "4d3fe35ed19a7f20",
+        "type": "tcp request",
+        "z": "1e9d2521b3667a16",
+        "name": "",
+        "server": "192.168.0.10",
+        "port": "8501",
+        "out": "char",
+        "ret": "string",
+        "splitc": "\\n",
+        "newline": "",
+        "trim": false,
+        "tls": "",
+        "x": 460,
+        "y": 160,
+        "wires": [
+            [
+                "cbfcf721b6a8ca0a"
+            ]
+        ]
+    },
+    {
+        "id": "cbfcf721b6a8ca0a",
+        "type": "function",
+        "z": "1e9d2521b3667a16",
+        "name": "dashboard switching",
+        "func": "var val;\nif (msg.payload == 1){\n    msg.payload = true;\n}\nelse{\n    msg.payload = false;\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 680,
+        "y": 160,
+        "wires": [
+            [
+                "9b8fabac5c2ddec0"
+            ]
+        ]
+    },
+    {
+        "id": "27f3c0f37ddf3c93",
+        "type": "inject",
+        "z": "1e9d2521b3667a16",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "0.25",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 110,
+        "y": 80,
+        "wires": [
+            [
+                "406340f3e96e957e",
+                "d715b0c6a8800902",
+                "0e2b95579d7f97c2",
+                "4c46b65d03aef1ad",
+                "290f3afd8982aed8"
+            ]
+        ]
+    },
+    {
+        "id": "d715b0c6a8800902",
+        "type": "function",
+        "z": "1e9d2521b3667a16",
+        "name": "read yellow",
+        "func": "msg.payload = \"RD R36001\\r\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 150,
+        "y": 240,
+        "wires": [
+            [
+                "16b7db12d44c613e"
+            ]
+        ]
+    },
+    {
+        "id": "16b7db12d44c613e",
+        "type": "tcp request",
+        "z": "1e9d2521b3667a16",
+        "name": "",
+        "server": "192.168.0.10",
+        "port": "8501",
+        "out": "char",
+        "ret": "string",
+        "splitc": "\\n",
+        "newline": "",
+        "trim": false,
+        "tls": "",
+        "x": 400,
+        "y": 240,
+        "wires": [
+            [
+                "39990efd0ffe1a2e"
+            ]
+        ]
+    },
+    {
+        "id": "39990efd0ffe1a2e",
+        "type": "function",
+        "z": "1e9d2521b3667a16",
+        "name": "dashboard switching",
+        "func": "var val;\nif (msg.payload == 1){\n    msg.payload = true;\n}\nelse{\n    msg.payload = false;\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 620,
+        "y": 240,
+        "wires": [
+            [
+                "77f4d448d2165917"
+            ]
+        ]
+    },
+    {
+        "id": "0e2b95579d7f97c2",
+        "type": "function",
+        "z": "1e9d2521b3667a16",
+        "name": "read red",
+        "func": "msg.payload = \"RD R36002\\r\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 140,
+        "y": 340,
+        "wires": [
+            [
+                "da167e0d419e5be9"
+            ]
+        ]
+    },
+    {
+        "id": "da167e0d419e5be9",
+        "type": "tcp request",
+        "z": "1e9d2521b3667a16",
+        "name": "",
+        "server": "192.168.0.10",
+        "port": "8501",
+        "out": "char",
+        "ret": "string",
+        "splitc": "\\n",
+        "newline": "",
+        "trim": false,
+        "tls": "",
+        "x": 400,
+        "y": 340,
+        "wires": [
+            [
+                "974dd43c2adce6bc"
+            ]
+        ]
+    },
+    {
+        "id": "974dd43c2adce6bc",
+        "type": "function",
+        "z": "1e9d2521b3667a16",
+        "name": "dashboard switching",
+        "func": "var val;\nif (msg.payload == 1){\n    msg.payload = true;\n}\nelse{\n    msg.payload = false;\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 620,
+        "y": 340,
+        "wires": [
+            [
+                "408592a6d75f3112"
+            ]
+        ]
+    },
+    {
+        "id": "4c46b65d03aef1ad",
+        "type": "function",
+        "z": "1e9d2521b3667a16",
+        "name": "read blue",
+        "func": "msg.payload = \"RD R36003\\r\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 160,
+        "y": 460,
+        "wires": [
+            [
+                "a7a072855312f4ab"
+            ]
+        ]
+    },
+    {
+        "id": "a7a072855312f4ab",
+        "type": "tcp request",
+        "z": "1e9d2521b3667a16",
+        "name": "",
+        "server": "192.168.0.10",
+        "port": "8501",
+        "out": "char",
+        "ret": "string",
+        "splitc": "\\n",
+        "newline": "",
+        "trim": false,
+        "tls": "",
+        "x": 420,
+        "y": 460,
+        "wires": [
+            [
+                "3117bd3411d66e83"
+            ]
+        ]
+    },
+    {
+        "id": "3117bd3411d66e83",
+        "type": "function",
+        "z": "1e9d2521b3667a16",
+        "name": "dashboard switching",
+        "func": "var val;\nif (msg.payload == 1){\n    msg.payload = true;\n}\nelse{\n    msg.payload = false;\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 640,
+        "y": 460,
+        "wires": [
+            [
+                "dcc356c5390c1313"
+            ]
+        ]
+    },
+    {
+        "id": "c7f0e2bc15c83fea",
+        "type": "ui_text",
+        "z": "1e9d2521b3667a16",
+        "group": "decad4df4a837fe6",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Voltage: ",
+        "format": "{{msg.payload.volt}} V",
+        "layout": "row-spread",
+        "className": "",
+        "x": 860,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "290f3afd8982aed8",
+        "type": "function",
+        "z": "1e9d2521b3667a16",
+        "name": "read energy",
+        "func": "msg.payload = \"RDS DM201.L 3\\r\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 190,
+        "y": 580,
+        "wires": [
+            [
+                "168047aee287a24d"
+            ]
+        ]
+    },
+    {
+        "id": "168047aee287a24d",
+        "type": "tcp request",
+        "z": "1e9d2521b3667a16",
+        "name": "",
+        "server": "192.168.0.10",
+        "port": "8501",
+        "out": "char",
+        "ret": "string",
+        "splitc": "\\n",
+        "newline": "",
+        "trim": false,
+        "tls": "",
+        "x": 420,
+        "y": 580,
+        "wires": [
+            [
+                "bf07e166c92d9c2e",
+                "6f6ccbd2ca79ad93"
+            ]
+        ]
+    },
+    {
+        "id": "bf07e166c92d9c2e",
+        "type": "function",
+        "z": "1e9d2521b3667a16",
+        "name": "energy format",
+        "func": "let input = msg.payload;\nconst values = input.split(\" \").map(value => parseFloat(value));\n\nmsg.payload = {\n    \"current\": values[0],\n    \"volt\": values[1]/100,\n    \"apparentPower\": values[2]\n};\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 640,
+        "y": 580,
+        "wires": [
+            [
+                "c7f0e2bc15c83fea",
+                "389a60320ae027dd",
+                "0902d019f67fa7e7"
+            ]
+        ]
+    },
+    {
+        "id": "389a60320ae027dd",
+        "type": "ui_text",
+        "z": "1e9d2521b3667a16",
+        "group": "decad4df4a837fe6",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Current: ",
+        "format": "{{msg.payload.current}} mA",
+        "layout": "row-spread",
+        "className": "",
+        "x": 860,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "0902d019f67fa7e7",
+        "type": "ui_text",
+        "z": "1e9d2521b3667a16",
+        "group": "decad4df4a837fe6",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Apparent Pow: ",
+        "format": "{{msg.payload.apparentPower}} W",
+        "layout": "row-spread",
+        "className": "",
+        "x": 880,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "6f6ccbd2ca79ad93",
+        "type": "debug",
+        "z": "1e9d2521b3667a16",
+        "name": "debug 76",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 820,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "38a86499a209a7ba",
+        "type": "ui_group",
+        "name": "Controll Lamp",
+        "tab": "67d19d72e9751fb3",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "decad4df4a837fe6",
+        "type": "ui_group",
+        "name": "Energy",
+        "tab": "67d19d72e9751fb3",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "67d19d72e9751fb3",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
